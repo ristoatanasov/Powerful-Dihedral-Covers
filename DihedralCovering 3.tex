@@ -1,0 +1,368 @@
+\documentclass{amsart}
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+
+\title{CoveringDihedral}
+\author{ratanasov }
+\date{November 2018}
+
+\usepackage[margin=1in]{geometry}
+
+      \title[The Powerful Subgroup Covering Number of Dihedral 2-Groups]%
+            {The Powerful Subgroup Covering Number of Dihedral 2-Groups}
+\author[R.~Atanasov]{Risto~Atanasov}
+\address{Department of Mathematics and Computer Science \\
+Stillwell 426 \\
+Western Carolina University \\
+Cullowhee, NC 28723 USA}
+\email{ratanasov@email.wcu.edu}
+
+\author[A.~Gregory]{Adam ~Gregory}
+\address{Department of Mathematics and Computer Science \\
+Stillwell 426 \\
+Western Carolina University \\
+Cullowhee, NC 28723 USA}
+\email{adgregory1@catamount.wcu.edu}
+
+\author[L.~Guatelli]{Luke Guatelli}
+\address{Department of Mathematics and Computer Science \\
+Stillwell 426 \\
+Western Carolina University \\
+Cullowhee, NC 28723 USA}
+\email{lrguatelli1@catamount.wcu.edu}
+
+\author[A.~Penland]{Andrew~Penland}
+\address{Department of Mathematics and Computer Science \\
+Stillwell 426 \\
+Western Carolina University \\
+Cullowhee, NC 28723 USA}
+\email{adpenland@email.wcu.edu}
+
+   \keywords{ }
+  \subjclass[2000]{}
+  %     \date{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{ifpdf}
+\ifpdf
+  \usepackage[pdftex,pagebackref,hyperindex,
+   pdftitle={DihedralPowerfulCoveringNumber},
+  pdfauthor={},
+ pdfsubject={2010 Mathematics Subject Classification:},
+pdfkeywords={},
+  ]{hyperref}
+\else
+  \usepackage[hypertex,pagebackref,hyperindex]{hyperref}
+\fi
+
+
+\setlength{\overfullrule}{2pt}
+
+\usepackage{geometry}
+\usepackage{amsmath,amssymb,mathrsfs, euscript}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage[all]{xypic}
+\usepackage[pdftex]{graphicx}
+
+
+\numberwithin{equation} {section}
+
+\newtheorem{theorem}[equation]{Theorem}
+\newtheorem*{cor}{Corollary}
+\newtheorem{lemma}[equation]{Lemma}
+\newtheorem{question}[equation]{Question}
+\newtheorem{proposition}[equation]{Proposition}
+\newtheorem{corollary}[equation]{Corollary}
+\newtheorem{claim}[equation]{Claim}
+\theoremstyle{definition}
+\newtheorem*{rems}{Remarks}
+\newtheorem{defn}[equation]{Definition}
+\newtheorem{example}[equation]{Example}
+\newtheorem*{remark}{Remark}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+A finite $p$-group $G$ is called \textit{powerful} if either $p$ is odd and $[G,G]\subseteq G^p$ or $p=2$ and $[G,G]\subseteq G^4$. A {\em{cover}} for a group is a collection of subgroups whose union is equal to the entire group.   We will discuss covers of $p$-groups by powerful subgroups. The size of the smallest cover of a $p$-group by powerful subgroups is called the \textit{powerful covering number}. Our focus in this paper is to determine the powerful subgroup covering number of the Dihedral 2-groups.
+\end{abstract}
+
+
+
+\maketitle
+
+\section{Introduction}
+
+If $G$ is a group, a \textit{cover} of $G$ is a collection of proper subgroups whose union is equal to $G$, and the \textit{covering number} of $G$ is the minimal number of proper subgroups that occur in any covering of $G$. We write $\sigma(G)$ for the covering number of $G$. 
+
+If $G$ is a $p$-group, we define a \textit{powerful cover} of $G$ to be a covering of $G$ by powerful subgroups. We define the \textit{powerful covering number} of $G$ to be the minimal number of subgroups in any powerful covering of $G$. Our main result in this paper is to establish the powerful covering number of the dihedral $2$-groups. 
+
+Interest in coverings and covering numbers goes back to G.A. Miller, who considered covers by subgroups with pairwise trivial intersection~\cite{}. Such a cover is known as a \textit{partition}. reference and culminating in a theorem which completely classifies all finite groups with a partition. todo: references  see \url{https://projecteuclid.org/download/pdf_1/euclid.ijm/1258488174}  todo: Partition Numbers by Foguel
+
+Scorza todo:reference, who first noted that there is no group with $\sigma(G) = 3.$ There has been a lot of interest in calculating the covering number for  todo: more references for $\sigma(G)$ -- Cohn, Tomkinson, etc. 
+
+Additionally, one may consider coverings in which all subgroups share some certain property. Bargava (todo: reference) classified the groups which have coverings by normal subgroups. todo: look also at \url{https://mathoverflow.net/questions/266368/normal-covering-number-and-maximal-cyclic-subgroups}
+
+Foguel and Ragland (todo: reference) investigated coverings by abelian groups, all of which are pairwise isomorphic. Atanasov, Foguel, and Penland considered coverings by subgroups that all have the same order and have mutually isomorphic pairwise intersections. 
+
+\section{Background} 
+
+In the interest of making this paper self-contained and accessible to non-experts, we will make very few assumptions about the reader's knowledge of group theory. This section reviews all definitions and well-known facts necessary to establish our results. Most of this material is standard and can be found in a standard text such as todo: reference Rotman.
+
+Henceforth in this paper, all groups are assumed to be finite. 
+
+
+\subsection{Group Theory}
+
+Let $G$ be a group. If $S$ is a subset of $G$, the \textit{group generated by $S$} is the smallest subgroup of $G$ that contains $S$. If $T$ is a set, we write $|T|$ for the cardinality of $T$. A subgroup generated by a single element $g \in G$ is denoted $\langle g \rangle$ in an abuse of notation. Such a subgroup is called \textit{cyclic} . For $g \in G$, the \textit{order} of $g$ is $|\langle g \rangle|$.  For $g,h$ in $G$, the \textit{commutator of $g$ and $h$} is defined as $g^{-1}h^{-1}gh$. The \textit{commutator subgroup of G}, denoted $G'$, is the group generated by all commutators of all pairs of elements in $G$. Let $p$ be a fixed prime number. We say that $G$ is a $p$-group if every element in $G$ has order equal to a power of $p$. The subgroup $G^p$ is defined as \[
+G^p = \langle \{ g^p \mid g \in G \} \rangle.
+\]
+
+A subgroup $K$ of $G$ is \textit{maximal} if whenever there exists a subgroup $H \subseteq G$ such that $K$ is a proper subgroup of $H$, it follows that $H = G$. If $H$ is any subgroup of $G$, the \textit{index} of $H$ in $G$ is equal to $\displaystyle\frac{|G|}{|H|}.$ For a $p$-group, it is known that all maximal subgroups have index $p$. If $T$ is a group, a homomorphism is a map $\alpha: G \rightarrow T$ such that $\alpha(gh) = \alpha(g)\alpha(h)$ for all $g, h\ in G$. If $T$ is a group and $\alpha: G \rightarrow T$ is a homomorphism, then the index of $\ker \alpha$ is equal to the size of the image of $\alpha$. 
+
+If $G_1$ and $H$ are groups, then the \textit{direct product} $G_1 \times G_2$ is a group with the set $\{ (g,h) \mid g \in G, h \in H \} $ and group operation given componentwise.
+
+\subsection{Powerful Groups}
+
+A finite $p$-group $G$ is called \textit{powerful} if either $p$ is odd and $[G,G]\subseteq G^p$ or $p=2$ and $[G,G]\subseteq G^4$. Powerful groups were first introduced by todo: whoever introduced them.  
+
+todo: references for places where powerful groups have been used to obtain important results (such as classification of groups by finite coclass)
+todo: 
+
+\subsection{Group Covers}
+
+If $G$ is a group,  the \textit{covering number of $G$} is defined as the minimal number of subgroups needed to cover the group. We define the \textit{powerful covering number of $G$} as the minimal number of proper powerful subgroups needed to cover the group. We define the \textit{abelian covering number of $G$} as the minimal number of abelian powerful subgroups needed to cover the $G$. We write $\sigma(G)$ for the covering number, $\sigma_P(G)$ for the powerful covering number, and $\sigma_A(G)$ for the abelian covering number. 
+
+\begin{lemma}\label{l:all-p-groups-have-powerful-covers}
+Let $G$ be a finite noncyclic $p$-group. Then $G$ has a powerful covering.
+\end{lemma}
+
+\begin{proof}
+$G$ has a covering by the set of all cyclic subgroups, and cyclic groups are powerful. 
+\end{proof}
+
+\begin{lemma}\label{l:powerful-abelian-covering-relationship}
+If $G$ is a finite $p$-group, the relationship
+\[
+\sigma_{A}(G) \leq \sigma_{P}(G) \leq \sigma(G)
+\]
+always holds. 
+\end{lemma}
+
+\begin{proof}
+This follows immediately from the fact that abelian groups are powerful. 
+\end{proof}
+
+\begin{theorem}
+Let $G$ be a finite $p$-group. If $K$ is a finite homomorphic image of $G$ such that $K$ is not cyclic, then $\sigma_P(K) \leq \sigma_P(G)$.
+\end{theorem}
+
+\textbf{Note (AP):} I believe that the following claim is true, but it needs verification. Be careful! It is not true for covering numbers in general. Understanding why would be a good exercise. 
+
+\begin{proof}
+ Suppose $G = \bigcup_{i=1}^n H_i$, where each $H_i$ is a proper powerful subgroup. Let $\alpha: G \rightarrow K$ be a surjective homomorphism. We see that each $\alpha(H_i)$ is also a powerful subgroup, and that \[
+ \bigcup_{i=1}^n \alpha\left(H_i\right) = K.
+ \]
+\end{proof}
+
+\begin{theorem}
+Let $G$ be a finite $p$-group and let $K$ be a powerful finite $p$-group. Then $\sigma_P(G \times K) = \sigma_P(G).$
+\end{theorem}
+
+\begin{proof}
+
+\end{proof}
+
+todo: add reference to Cohn or Tomkinson for the theorem below. 
+
+\begin{theorem}\label{t:covering-number-doesnt-change-abelian} Let $G$ be a $p$-group. Then $\sigma(G) =  p + 1$.
+\end{theorem}
+
+This immediately leads to the following result for abelian $p$-groups. 
+
+\begin{corollary}
+Let $G$ be an abelian $p$-group. Then $\sigma_{A}(G) = \sigma_P(G) = \sigma(G) = p+1$.
+\end{corollary}
+
+The covering number $\sigma$ is well-behaved with respect to subgroup inclusion: if $H$ is a subgroup of $G$, then $\sigma(H) \leq \sigma(G)$. However, for powerful covers, this may not be true, since not all subgroups of a powerful group are powerful. 
+
+todo: example of a subgroup where the powerful covering number is larger than the powerful covering number of a group? 
+
+\subsection{Dihedral Groups}
+
+For $n \geq 2$, we define $D(2^n)$ to be the set of isometries of a regular $2^n$-gon. The group $D(2^n)$ has $2^{n+1}$ elements. 
+
+We say a group is a  \textit{dihedral $2$-group} if it is equal to $D(2^n)$ for some $n \geq 3$, or if it is isomorphic to $C_2$, $C_2 \times C_2$, or the trivial group. 
+
+\section{Preliminary Results on Powerful and Abelian Covering Numbers}
+
+
+
+\section{todo: Section Title}
+
+\begin{proposition}
+For any $n \geq 1$, $D(2^n)$ has three maximal subgroups. Two of these maximal subgroups are isomorphic to $D(2^n)$, and one is isomorphic to $C(2^n)$.
+\end{proposition}
+
+\begin{proof}
+The maximal subgroups of a dihedral 2-group $D(2^n)$ correspond to  the kernels of nontrivial homomorphisms from $D(2^n)$ to $C_2$. There are 
+\end{proof}
+
+
+\begin{proposition}\label{p:dihedral-or-cyclic}
+Every subgroup of a dihedral 2-group $D(2^n)$ is either dihedral or cyclic.
+\end{proposition}
+
+\begin{proof}
+todo: by induction on $n$. 
+\end{proof}
+
+\begin{lemma}\label{l:normal-form}
+Suppose $g \in D(2^n)$. 
+\begin{enumerate}
+\item[(i.)] The element $g$ can be written uniquely as $g = (ab)^ja^k$ for some integers $j$ and $k$ with $0 \leq j < 2^{n}$ and $0 \leq k \leq 1$. 
+\item[(ii.)] If $g = (ab)^ja$ for some $j$ with $0 \leq j < 2^{n}$, then $|g| = 2$. 
+\item[(iii.)] If $g = (ab)^j$ for some $j$ with $0 \leq j < 2^{n}$, then $|g| = \displaystyle\frac{2^{n-1}}{\gcd(j,2^{n-1}}$. 
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Proof of (i.)) This follows from well-known facts about cosets in a group. (todo: Provide lemma above.) 
+(Proof of (ii.)) Suppose $g = (ab)^ja$ for some $j$ with $0 \leq j \leq 2^{n-1}$. Then we calculate
+\begin{align*}
+((ab)^j a)^2 &= (ab)^j a (ab)^j a \\
+&= a (ba)^j (ab)^j a \\
+\end{align*}
+
+Since $(ab)^j$ is the inverse of $(ba)^j$ and $a^2 = e$,  $a (ba)^j (ab)^j a$ is trivial, and the result follows. (Proof of (iii.)) This follows from the fact that $(ab)$ has order two and Lemma~\ref{l:cyclic-group-facts}.
+\end{proof}
+
+\begin{corollary}\label{c:powerful-isomorphism-types} 
+If a subgroup $H$ of $D(2^n)$ is powerful, then either $H\cong C_2\times C_2$ or $H\cong C_k$ where $k $ is a divisor of $2^{n-1}$. If $H \cong C_k$ for $k > 2$, then $H$ is a subgroup of $\langle ab \rangle$. 
+\end{corollary}
+
+\begin{proof}
+The first statement follows from Proposition~\ref{p:dihedral-or-cyclic}. The second statement follows from Lemma~\ref{l:normal-form}. 
+\end{proof} 
+
+
+Note that the form for elements given in Lemma~\ref{l:normal-form} may not be the shortest or most intuitive form for writing the element. For instance, the generator $b \in D_4$ would be written as $(ab)^3a$ under the convention we've established. Lemma~\ref{l:normal-form} also establishes the following characterization of elements of order two in $D(2^n)$. 
+
+\begin{corollary}\label{c:elements-of-order-two}
+Let $G = D_{2^n}$. If $g \in G$, then $g$ has order two if and only if $g = (ab)^ja$ for some $0 \leq k \leq 2^n$, or $g = (ab)^{2^n}$. 
+\end{corollary} 
+
+\begin{proposition}\label{p:subgroup-cover-must-contain-maximal-cyclic}
+Let $\mathcal{C} = \{H_1, \ldots, H_q \}$ be any subgroup cover of $D(2^n)$. Then there is some $i$ with $1 \leq i \leq q$ such that $H_i = \langle ab \rangle$.
+\end{proposition}
+
+\begin{proof}
+By definition of subgroup cover, there must be some $i \in \{1,\ldots, q\}$ such that $ab\in H_i$. Since $H_i$ contains $ab$, it follows that $H_i$ contains the subgroup$\langle ab \rangle$. Since $\langle ab \rangle$ is maximal and $H_i$ must be a proper subgroup, it follows that $H_i = \langle ab \rangle$. 
+\end{proof}
+
+todo in background: definition of maximal 
+
+\textbf{Note to Risto:} I was able to do the proof without what we were calling ``Lemma 2'' in your office. 
+
+\begin{comment}
+This was originally included as a Lemma, but I no longer feel it is necessary. 
+
+\begin{proposition}\label{p:how-to-cover-reflections}
+Le $B = \{(ab)^ja \mid 0 \leq j \leq 2^{n-1} \}$. Let $\mathcal{C}$ be a collection of subgroups of $D(2^n)$. Then $\mathcal{C}$ is a minimal powerful subgroup cover of $B$ if and only if removing the subgroup $\langle ab \rangle$ from $C$ results in a minimal powerful subgroup cover of $D(2^n)$. 
+\end{proposition}
+
+\begin{proof}
+todo. 
+\end{proof}
+\end{comment}
+
+\begin{lemma}\label{l:copies-of-C2-times-C2}
+Let $H$ be a subgroup of a dihedral $2$-group. Then $H$ is isomorphic to $C_2 \times C_2$ if and only if $H = \langle (ab)^sa, (ab)^ta \rangle$, where $t \neq s$ and $t + s = 2^n$.
+\end{lemma}
+
+\begin{proof}
+Let $t$ and $s$ be distinct positive integers $s + t = 2^n$. We let $x = (ab)^sa$ and $y = (ab)^ta$, and we let $H$ be a group generated by $x$ and $y$. First, notice that $x$ and $y$ each have order two, by Lemma~\ref{l:l:normal-form}. We calculate that
+\begin{align*}
+xy &= (ab)^sa(ab)^ta \\
+&= (ab)^s a (ab)^{2^n - s} a \\
+&= (ab)^s a a (ba)^{2^n - s} \\
+&= (ab)^s a a (ab)^{2^n - s} \\
+&= (ab)^s (ab)^{2^n - s} \\
+&= (ab)^{2^n} 
+\end{align*}
+
+A similar calculation establishes that $yx = (ba)^{2^n}$, and since $(ab)^{2^n} = (ba)^{2^n}$ by todo: ab-order-lemma, it follows that $xy = yx$. Hence $\langle x, y \rangle \cong C_2 \times C_2$ by todo:C2-C2-structure-lemma. 
+
+For the other direction, we suppose that $H$ is a subgroup of $D(2^n)$ such that $H$ is isomorphic to $C_2 \times C_2$. Note that $H$ must contain an element of the form $(ab)^sa$, otherwise $H$ would be contained in the cyclic group $\langle ab \rangle$. $H$ must also contain another element $g$ of order two. We consider two cases for $g$, following Corollary~\ref{c:elements-of-order-two}. 
+
+\textbf{Case 1:} $g = (ab)^{2^n}$. Then we know that $g$ and $(ab)^sa$ commute, and that  $(ab)^r = (ab)^{2^{n+1} - r}$ for any $r$, by todo: lemma-ab-2n-facts. So we have
+\begin{align*}
+(ab)^{2^n}(ab)^j a &= (ab)^{2^n +j} a \\
+&= (ab)^{2^{n+1} - (2^n + j)} a\\
+&= (ab)^{2^n - j} a \\
+\end{align*}
+
+Letting $t = 2^n - s$, we have shown that in this case, $H = \langle (ab)^s a, (ab)^t a \rangle$, where $s \neq t$ and $s + t = 2^n$.
+
+\textbf{Case 2:} $g = (ab)^r a $ for some $r$. Without loss of generality, assume $s > r$. Then $H$ also contains $(ab)^s a g$, which is equal to $(ab)^s a (ab)^r a$, which simplifies to $(ab)^{s-r}$ using the fact that $(ab)^m = (ba)^{2^n - m}$. By Lemma~\ref{l:normal-form}, if $s-r \neq 2^n$, then $(ab)^{s-r}$ generates a cyclic subgroup of order larger than two, contradicting our assumption that $H \cong C_2 \times C_2$. Thus it must be the case that $s-r = 2^n$, and the result follows. 
+\end{proof}
+
+\begin{corollary}
+Let $g \in D(2^n)$ such that $g = (ab)^ja$ for some $0 \leq j \leq 2^{n-1}$. If $H$ is a powerful subgroup of $D(2^n)$ that contains $g$, then $H$ is either trivial, isomorphic to $C_2$, or isomorphic to $C_2 \times C_2$. 
+\end{corollary}
+
+\begin{remark}\label{r:count-and-intersection-C2}
+From Lemma~\cite{l:copies-of-C2-times-C2}, it follows that there are exactly $2^{n-1}$ subgroups of $D(2^n)$ that are isomorphic to $C_2 \times C_2$ -- one for each pair of numbers $s,t$ with $0 \leq s, t \leq 2^{n-1}$ with $s \neq t$ such that $s+t = 2^n$. It also follows from this Lemma that if $H_i$ and $H_j$ are distinct subgroups isomorphic to $C_2 \times C_2$, then $H_i \cap H_jk = \langle (ab)^{2^{n-1}} \rangle $, which is the center of $D(2^n)$. 
+\end{remark}
+
+\section{Main Results}
+
+\begin{proposition}\label{p:upper-bound-covering-number} 
+There exists a powerful cover of $D(2^n)$ with $2^{n-1} + 1$ subgroups. 
+\end{proposition}
+
+\begin{proof}
+Let $H_1 = \langle ab \rangle$, and for $1 \leq r \leq 2^{n+1}$, let $H_{r+1} = \langle (ab)^{r}a, (ab)^{2^n - r}a \rangle$. There are $2^{n-1}+1$ subgroups, each $H_i$ is abelian, and every element of $D(2^n)$ is contained in some $H_i$.  
+\end{proof}
+
+\begin{theorem}\label{t:main-result}
+The powerful subgroup covering number of $D(2^n)$ is $2^{n-1}+1$.
+\end{theorem}
+
+\begin{proof}
+By Proposition~\ref{p:upper-bound-covering-number}, we know that the powerful covering number of $D(2^n)$ is at most $2^{n-1} + 1$. Now we show that $D(2^n)$ can not be covered by fewer than $2^{n-1} + 1$ powerful subgroups. Let $\mathcal{C} = \{ H_1, \ldots, H_q \}$ be a powerful cover of $D(2^n)$. Appealing to Proposition~\ref{p:subgroup-cover-must-contain-maximal-cyclic} and re-indexing if necessary, we may assume that $H_1 = \langle ab \rangle$, so $|H_1| = 2^n$. Now we claim that for each $i$ with $2 \leq i \leq 1$, the subgroup $H_i$ is isomorphic to to either $C_2$ or $C_2 \times C_2$.  This follows from Proposition~\ref{c:powerful-isomorphism-types} ,and from the fact that if $H_i \cong C_k$ for some $k > 2$, we would have $H_i \subseteq \langle ab \rangle$. This would make the covering redundant, and hence no minimal. 
+From Remark~\ref{r:count-and-intersection-C2} each $H_i$ that is isomorphic to $C_2 \times C_2$ contains $e$ and $(ab)^{2^{n-1}}$, which are already in $H_1$, so each $H_i$ that is isomorphic to $C_2 \times C_2$ contributes two new elements, while each $H_i$ that is isomorphic to $C_2$ contributes one new element.  This means that
+\[
+\left| \bigcup_{i=1}^q H_i \right| \leq |H_1| + 2(q -1) = 2^{n} + 2(q-1).
+\]
+In other words, the subgroups $H_2, \ldots, H_q$ can contain at most $2(q-1)$ elements not contained in $H_1$.
+If $q < 2^{n-1}$, we would then have \[
+\left| \bigcup_{i=1}^q H_i \right| < 2^{n} + 2(2^{n-1}) = 2^{n+1},
+\] meaning that this collection of subgroups could not be a cover for the $2^{n+1}$ elements of $D(2^n)$. Thus, any cover of $D(2^n)$ by powerful subgroups must contain at least $2^{n-1} + 1$ powerful subgroups. This completes the proof. 
+\end{proof} 
+
+\begin{corollary}
+For $n \geq 2$, $\sigma_P(D(2^n)) = \sigma_A(D(2^n))$.
+\end{corollary}
+
+\begin{proof}
+This follows from Theorem~\ref{t:main-result} and todo.
+\end{proof}
+
+\section{Conclusion}
+
+There are three $2$-groups of coclass equal to 1. We have explicitly calculated the powerful covering number for one of them. 
+
+
+\end{document}
+
+
+
+
+
+
+
+
