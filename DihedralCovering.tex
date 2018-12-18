@@ -8,6 +8,32 @@
 
 \usepackage[margin=1in]{geometry}
 
+
+% Some commands for this paper
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\LL}{\mathcal{L}}
+\newcommand{\KK}{\mathcal{K}}
+\newcommand{\HH}{\mathcal{H}}
+\newcommand{\MM}{\mathcal{M}}
+\newcommand{\TT}{\mathcal{T}}
+\newcommand{\BT}{\mathcal{BT}}
+\newcommand{\PP}{\mathcal{P}}
+\newcommand{\Mlt}{\mathrm{Mlt}}
+\newcommand{\LMlt}{\mathrm{LMlt}}
+\newcommand{\PMlt}{\mathrm{PMlt}}
+\newcommand{\RMlt}{\mathrm{RMlt}}
+\newcommand{\Nuc}{\mathrm{Nuc}}
+\newcommand{\Ker}{\mathrm{ker}}
+\newcommand{\Btp}{\mathrm{Btp}}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\CL}{\mathcal{L}^{(Q)}(\mathbb{F})}
+\newcommand{\GCL}{\mathcal{L}^{(Q)}(S)}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\CLQ}{\mathcal{L}^{(3)}(\mathbb{Q})}
+\newcommand{\ID}{\text{\bf{1}}}
+\newcommand{\iv}{^{-1}}
+
       \title[On Covers of Dihedral 2-Groups by Powerful Subgroups]
             {On Covers of Dihedral 2-Groups by Powerful Subgroups}
 \author[R.~Atanasov]{Risto~Atanasov}
@@ -96,23 +122,34 @@ A finite $p$-group $G$ is called \textit{powerful} if either $p$ is odd and $[G,
 
 \section{Introduction}
 
-If $G$ is a group, a \textit{cover} of $G$ is a collection of proper subgroups whose union is equal to $G$, and the \textit{covering number} of $G$ is the minimal number of proper subgroups that occur in any cover of $G$. We write $\sigma(G)$ for the covering number of $G$. 
 
-If $G$ is a $p$-group, we define a \textit{powerful cover} of $G$ to be a covering of $G$ by powerful subgroups. We define the \textit{powerful covering number} of $G$ to be the minimal number of subgroups in any powerful covering of $G$. Our main result in this paper is to establish the powerful covering number of the dihedral $2$-groups. 
+If $G$ is a group, a \textit{cover} of $G$ is a collection of proper subgroups whose union is equal to $G$. If $G$ is a $p$-group, we define a \textit{powerful cover} of $G$ to be a covering of $G$ by powerful subgroups. We define the \textit{powerful covering number} of $G$ to be the minimal number of subgroups in any powerful covering of $G$. Our main result in this paper is to establish the powerful covering number of the dihedral $2$-groups. 
 
-Interest in coverings and covering numbers goes back to G.A. Miller, who considered covers by subgroups with pairwise trivial intersection~\cite{}. Such a cover is known as a \textit{partition}. reference and culminating in a theorem which completely classifies all finite groups with a partition. todo: references  see \url{https://projecteuclid.org/download/pdf_1/euclid.ijm/1258488174}  todo: Partition Numbers by Foguel
+Interest in coverings and covering numbers goes back to  G.A. Miller, who considered covers by subgroups with pairwise trivial intersection~\cite{Mi}. Such a cover is known as a \textit{partition}. In 1961 Baer, Kegel and Suzuki completed the classification of partitions of finite groups \cite{Ba, Ke, Su}.
+\begin{theorem} [The Classification Theorem]  $G$ is a finite group admitting a nontrivial partition if and only if $G$ is isomorphic with exactly one of the following groups:
+\begin{enumerate}
+\item $S_4$;
+\item  a $p$-group with $H_p(G) \ne G$, where $H_p(G)=\langle  x\in G \mid x^p\ne1\rangle$ ;
+\item  a group of Hughes-Thompson type;
+\item  a Frobenius groups;
+\item $PSL(2, p^n)$ with $p^n\ge 4$;
+\item $PGL(2, p^n)$ with $p^n\ge 5$  and $p$ odd;
+\item $Sz(2^{2n+1})$,
+\end{enumerate}
+where $p$ is a prime and $n$ is a natural number.\end{theorem}
 
-Scorza todo:reference, who first noted that there is no group with $\sigma(G) = 2.$ There has been a lot of interest in calculating the covering number for  todo: more references for $\sigma(G)$ -- Cohn, Tomkinson, etc. 
 
-Additionally, one may consider coverings in which all subgroups share some certain property. Bargava (todo: reference) classified the groups which have coverings by normal subgroups. todo: look also at \url{https://mathoverflow.net/questions/266368/normal-covering-number-and-maximal-cyclic-subgroups}
 
-Foguel and Ragland (todo: reference) investigated coverings by abelian groups, all of which are pairwise isomorphic. Atanasov, Foguel, and Penland considered coverings by subgroups that all have the same order and have mutually isomorphic pairwise intersections. 
+Many authors have investigated group covers consisting of subgroups which share some common property. Beginning with Cohn \cite{Cohn} 
+and Tomkinson \cite{Tomkinson},
+there has been much activity to determine the minimal number of subgroups necessary to cover particular classes of groups. The survey paper by Serena \cite{Se} offers a comprehensive survey on group covers, and the introduction to a paper by Kappe and Redden \cite{Ka}
+gives a thorough overview of more recent results. The thesis of 
+Garonzi \cite{AtMost25} gives an overview of groups which can be covered by 25 or fewer subgroups.  Foguel and Ragland \cite{FR} investigated coverings by abelian groups, all of which are pairwise isomorphic. In \cite
+{AFP}, Atanasov, Foguel, and Penland considered coverings by subgroups that all have the same order and have mutually isomorphic pairwise intersections. 
 
 \section{Background} 
 
-In the interest of making this paper self-contained and accessible to non-experts, we will make very few assumptions about the reader's knowledge of group theory. This section reviews all definitions and well-known facts necessary to establish our results. Most of this material is standard and can be found in a standard text such as~\cite{Dummit-Foote}.
-
-Henceforth in this paper, all groups are assumed to be finite. 
+In the interest of making this paper self-contained and accessible to non-experts, we will make very few assumptions about the reader's knowledge of group theory. This section reviews all definitions and well-known facts necessary to establish our results. Most of this material is standard and can be found in a standard text such as~\cite{Dummit-Foote}.  All groups in this paper are assumed to be finite. 
 
 
 \subsection{Group Theory}
