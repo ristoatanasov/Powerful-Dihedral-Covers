@@ -8,32 +8,6 @@
 
 \usepackage[margin=1in]{geometry}
 
-
-% Some commands for this paper
-\newcommand{\ZZ}{\mathbb{Z}}
-\newcommand{\LL}{\mathcal{L}}
-\newcommand{\KK}{\mathcal{K}}
-\newcommand{\HH}{\mathcal{H}}
-\newcommand{\MM}{\mathcal{M}}
-\newcommand{\TT}{\mathcal{T}}
-\newcommand{\BT}{\mathcal{BT}}
-\newcommand{\PP}{\mathcal{P}}
-\newcommand{\Mlt}{\mathrm{Mlt}}
-\newcommand{\LMlt}{\mathrm{LMlt}}
-\newcommand{\PMlt}{\mathrm{PMlt}}
-\newcommand{\RMlt}{\mathrm{RMlt}}
-\newcommand{\Nuc}{\mathrm{Nuc}}
-\newcommand{\Ker}{\mathrm{ker}}
-\newcommand{\Btp}{\mathrm{Btp}}
-\newcommand{\Aut}{\mathrm{Aut}}
-\newcommand{\CL}{\mathcal{L}^{(Q)}(\mathbb{F})}
-\newcommand{\GCL}{\mathcal{L}^{(Q)}(S)}
-\newcommand{\FF}{\mathbb{F}}
-\newcommand{\QQ}{\mathbb{Q}}
-\newcommand{\CLQ}{\mathcal{L}^{(3)}(\mathbb{Q})}
-\newcommand{\ID}{\text{\bf{1}}}
-\newcommand{\iv}{^{-1}}
-
       \title[On Covers of Dihedral 2-Groups by Powerful Subgroups]
             {On Covers of Dihedral 2-Groups by Powerful Subgroups}
 \author[R.~Atanasov]{Risto~Atanasov}
@@ -122,34 +96,26 @@ A finite $p$-group $G$ is called \textit{powerful} if either $p$ is odd and $[G,
 
 \section{Introduction}
 
+If $G$ is a group, a \textit{cover} of $G$ is a collection of proper subgroups whose union is equal to $G$, and the \textit{covering number} of $G$ is the minimal number of proper subgroups that occur in any cover of $G$. We write $\sigma(G)$ for the covering number of $G$. 
 
-If $G$ is a group, a \textit{cover} of $G$ is a collection of proper subgroups whose union is equal to $G$. If $G$ is a $p$-group, we define a \textit{powerful cover} of $G$ to be a covering of $G$ by powerful subgroups. We define the \textit{powerful covering number} of $G$ to be the minimal number of subgroups in any powerful covering of $G$. Our main result in this paper is to establish the powerful covering number of the dihedral $2$-groups. 
+A finite $p$-group $H$ is called \textit{powerful} if either $p$ is odd and $[H,H]\subseteq H^p$ or $p=2$ and $[H,H]\subseteq H^4$. 
+If $G$ is a $p$-group, we define a \textit{powerful cover} of $G$ to be a covering of $G$ by powerful subgroups. We define the \textit{powerful covering number} of $G$ to be the minimal number of subgroups in any powerful covering of $G$. Our main result in this paper is to establish the powerful covering number of the dihedral $2$-groups. 
 
-Interest in coverings and covering numbers goes back to  G.A. Miller, who considered covers by subgroups with pairwise trivial intersection~\cite{Mi}. Such a cover is known as a \textit{partition}. In 1961 Baer, Kegel and Suzuki completed the classification of partitions of finite groups \cite{Ba, Ke, Su}.
-\begin{theorem} [The Classification Theorem]  $G$ is a finite group admitting a nontrivial partition if and only if $G$ is isomorphic with exactly one of the following groups:
-\begin{enumerate}
-\item $S_4$;
-\item  a $p$-group with $H_p(G) \ne G$, where $H_p(G)=\langle  x\in G \mid x^p\ne1\rangle$ ;
-\item  a group of Hughes-Thompson type;
-\item  a Frobenius groups;
-\item $PSL(2, p^n)$ with $p^n\ge 4$;
-\item $PGL(2, p^n)$ with $p^n\ge 5$  and $p$ odd;
-\item $Sz(2^{2n+1})$,
-\end{enumerate}
-where $p$ is a prime and $n$ is a natural number.\end{theorem}
+Powerful groups were first introduced by Lubotzky and Mann~\cite{Lubotzky1}, who later used them to provide a characterization of $p$-adic analytic groups~\cite{Lubotzky2}. Powerful groups have played an important role in the theory of $p$-groups since their introduction. Notably, powerful groups served an important role in the classification of finite $p$-groups by a property known as \textit{coclass}, introduced by Leedham-Green and Newman in~\cite{Leedham1}(see~\cite{Leedham2} for an overview of conjectures and their proofs).  
 
+Interest in coverings and covering numbers goes back to G.A. Miller, who considered covers by subgroups with pairwise trivial intersection~\cite{Mi}. Such a cover is known as a \textit{partition}. reference and culminating in a theorem which completely classifies all finite groups with a partition. todo: references  see \url{https://projecteuclid.org/download/pdf_1/euclid.ijm/1258488174}  todo: Partition Numbers by Foguel
 
+Scorza todo:reference, who first noted that there is no group with $\sigma(G) = 2.$ There has been a lot of interest in calculating the covering number for  todo: more references for $\sigma(G)$ -- Cohn, Tomkinson, etc. 
 
-Many authors have investigated group covers consisting of subgroups which share some common property. Beginning with Cohn \cite{Cohn} 
-and Tomkinson \cite{Tomkinson},
-there has been much activity to determine the minimal number of subgroups necessary to cover particular classes of groups. The survey paper by Serena \cite{Se} offers a comprehensive survey on group covers, and the introduction to a paper by Kappe and Redden \cite{Ka}
-gives a thorough overview of more recent results. The thesis of 
-Garonzi \cite{AtMost25} gives an overview of groups which can be covered by 25 or fewer subgroups.  Foguel and Ragland \cite{FR} investigated coverings by abelian groups, all of which are pairwise isomorphic. In \cite
-{AFP}, Atanasov, Foguel, and Penland considered coverings by subgroups that all have the same order and have mutually isomorphic pairwise intersections. 
+Additionally, one may consider coverings in which all subgroups share some certain property. Bargava (todo: reference) classified the groups which have coverings by normal subgroups. todo: look also at \url{https://mathoverflow.net/questions/266368/normal-covering-number-and-maximal-cyclic-subgroups}
+
+Foguel and Ragland (todo: reference) investigated coverings by abelian groups, all of which are pairwise isomorphic. Atanasov, Foguel, and Penland considered coverings by subgroups that all have the same order and have mutually isomorphic pairwise intersections. 
 
 \section{Background} 
 
-In the interest of making this paper self-contained and accessible to non-experts, we will make very few assumptions about the reader's knowledge of group theory. This section reviews all definitions and well-known facts necessary to establish our results. Most of this material is standard and can be found in a standard text such as~\cite{Dummit-Foote}.  All groups in this paper are assumed to be finite. 
+In the interest of making this paper self-contained and accessible to non-experts, we will make very few assumptions about the reader's knowledge of group theory. This section reviews all definitions and well-known facts necessary to establish our results. Most of this material is standard and can be found in a standard text such as~\cite{DummitFoote}.
+
+Throughout the rest of this work, all groups are assumed to be finite. 
 
 
 \subsection{Group Theory}
@@ -158,16 +124,15 @@ Let $G$ be a group. If $S$ is a subset of $G$, the \textit{group generated by $S
 G^p = \langle \{ g^p \mid g \in G \} \rangle.
 \]
 
-A subgroup $K$ of $G$ is \textit{maximal} if whenever there exists a subgroup $H \subseteq G$ such that $K$ is a proper subgroup of $H$, it follows that $H = G$. If $H$ is any subgroup of $G$, the \textit{index} of $H$ in $G$ is equal to $\displaystyle\frac{|G|}{|H|}.$ For a $p$-group, it is known that all maximal subgroups have index $p$. If $T$ is a group, a homomorphism is a map $\alpha: G \rightarrow T$ such that $\alpha(gh) = \alpha(g)\alpha(h)$ for all $g, h\ in G$. If $T$ is a group and $\alpha: G \rightarrow T$ is a homomorphism, then the index of $\ker \alpha$ is equal to the size of the image of $\alpha$. 
+A subgroup $K$ of $G$ is \textit{maximal} if whenever there exists a subgroup $H \subseteq G$ such that $K$ is a proper subgroup of $H$, it follows that $H = G$. If $H$ is any subgroup of $G$, the \textit{index} of $H$ in $G$ is equal to $\displaystyle\frac{|G|}{|H|}.$ For a $p$-group, it is known that all maximal subgroups have index $p$. If $T$ is a group, a homomorphism is a map $\alpha: G \rightarrow T$ such that $\alpha(gh) = \alpha(g)\alpha(h)$ for all $g, h \in G$. If $T$ is a group and $\alpha: G \rightarrow T$ is a homomorphism, then the index of $\ker \alpha$ is equal to the size of the image of $\alpha$. 
 
 If $G_1$ and $H$ are groups, then the \textit{direct product} $G_1 \times G_2$ is a group with the set $\{ (g,h) \mid g \in G, h \in H \} $ and group operation given componentwise.
 
 \subsection{Powerful Groups}
 
-A finite $p$-group $G$ is called \textit{powerful} if either $p$ is odd and $[G,G]\subseteq G^p$ or $p=2$ and $[G,G]\subseteq G^4$. Powerful groups were first introduced by todo: whoever introduced them.  
 
-todo: references for places where powerful groups have been used to obtain important results (such as classification of groups by finite coclass)
-todo: 
+
+
 
 \subsection{Group Covers}
 
@@ -203,6 +168,7 @@ Let $G$ be a finite $p$-group. If $K$ is a finite homomorphic image of $G$ such 
  Suppose $G = \bigcup_{i=1}^n H_i$, where each $H_i$ is a proper powerful subgroup. Let $\alpha: G \rightarrow K$ be a surjective homomorphism. We see that each $\alpha(H_i)$ is also a powerful subgroup, and that \[
  \bigcup_{i=1}^n \alpha\left(H_i\right) = K.
  \]
+ todo: It remains to show that each $\alpha(H_i)$ is proper. This is the stumbling block in the general (non-powerful) case. 
 \end{proof}
 
 \begin{theorem}
@@ -210,7 +176,11 @@ Let $G$ be a finite $p$-group and let $K$ be a powerful finite $p$-group. Then $
 \end{theorem}
 
 \begin{proof}
-
+Suppose that $G$ has a minimal covering by powerful subgroups $H_1, \ldots, H_n$. In $G \times K$, each subgroup $H_i \times K$  is powerful, since the property of being powerful is preserved under direct products. Then we notice
+\[
+G \times K = \left( \bigcup_{i=1}^n H_i \right) \times K = \bigcup_{i=1}^n \left( H_i \times K \right),  
+\]
+which establishes that $\sigma_P(G \times K) \leq n$. \\ todo: Establish the other direction, if possible. \\
 \end{proof}
 
 todo: add reference to Cohn or Tomkinson for the theorem below. 
@@ -230,19 +200,36 @@ todo: example of a subgroup where the powerful covering number is larger than th
 
 \subsection{Cyclic and Dihedral Groups}
 
-We define the \textit{cyclic group of order t} to be the group generated by a single element of order $t$. We write $C_t$ for the cyclic group of order $t$. We let $\sigma$ represent the generator of $C_2$. 
+We define the \textit{cyclic group of order t} to be the group generated by a single element of order $t$. We write $C_t$ for the cyclic group of order $t$. We write $\tau$ to represent the generator of $C_2$. 
 
-The following facts about 
+todo: some facts about cyclic groups and the sizes of their subgroups
 
-For $n \geq 2$, we define $D(2^n)$ to be the set of isometries of a regular $2^n$-gon. The group $D(2^n)$ has $2^{n+1}$ elements. 
+\begin{lemma}\label{l:C2-C2-structure-lemma}
+If $G$ is a finite abelian group generated by two elements of order two, then $G$ is isomorphic to $C_2 \times C_2$. 
+\end{lemma}
 
-We say a group is a  \textit{dihedral $2$-group} if it is equal to $D(2^n)$ for some $n \geq 3$, or if it is isomorphic to $C_2$, $C_2 \times C_2$, or the trivial group. 
+\begin{proof}
+Let $G$ be a finite abelian group generated by two elements of order two. Call these two elements $x$ and $y$. Since $x$ and $y$ commute, $(xy)^2 = x^2y^2 = e$, so $xy$ also has order two. Since $(xy)x = x^2y = x$ and $(xy)y = xy^2 = x$, we see that $G$ only has four elements: $x$, $y$, $xy$, and $e$. Hence $G$ is an abelian group of order four with three elements of order two, it is isomorphic to $C_2 \times C_2$. 
+\end{proof}
+
+For $n \geq 2$, we define $D(2^n)$ to be the set of isometries of a regular $2^n$-gon. The group $D(2^n)$ has $2^{n+1}$ elements. todo: reflections vs. rotations, etc. 
+
+\begin{lemma}\label{l:dihedral-structure-lemma}
+If $G$ is a finite group generated by two elements of order two, then $G$ is isomorphic to a dihedral $2$-group. 
+\end{lemma}
+
+\begin{proof}
+todo
+\end{proof}
 
 
 \section{Elements and Subgroups of Dihedral Groups}
 
-todo: We need to define the exact generators $a$ and $b$ are two elements of order two so that $ab$ is the rotation by $\displaystyle\frac{2\pi}{2^n}$ radians. 
+In this section, we establish several facts regarding the subgroup structure of dihedral $2$-groups. All of these facts are well-known (see todo: some references), but we will provide detailed proofs. 
 
+As noted before, we define the group $D(2^n)$ as the set of isometries of a regular $2^n$-gon in the Cartesian plane. For definiteness and ease of calculation, let us take the vertices of this $2^n$-gon are at the points $\left(\cos\left(\displaystyle\frac{2\pi k}{2^n} \right), \sin \left( \displaystyle\frac{2 \pi ^ k}{2^n} \right) \right)$ for $i = 0, 1, \ldots,  2^n - 1$. 
+
+We will distinguish two elements of $D(2^n)$ as a generating set. Let $a$ be the reflection of the $2^n$-gon about the line $y = $. 
 
 \begin{lemma}\label{l:normal-form}
 Suppose $g \in D(2^n)$. 
@@ -254,16 +241,23 @@ Suppose $g \in D(2^n)$.
 \end{lemma}
 
 \begin{proof}
-Proof of (i.)) This follows from well-known facts about cosets in a group. (todo: Provide lemma above.) 
+Proof of (i.)) This follows from well-known facts about cosets in a group. (todo: Provide lemma in the previous section.) 
 (Proof of (ii.)) Suppose $g = (ab)^ja$ for some $j$ with $0 \leq j \leq 2^{n-1}$. Then we calculate
 \begin{align*}
 ((ab)^j a)^2 &= (ab)^j a (ab)^j a \\
-&= a (ba)^j (ab)^j a \\
+&= a (ba)^j (ab)^j a. \\
 \end{align*}
 
 Since $(ab)^j$ is the inverse of $(ba)^j$ and $a^2 = e$,  $a (ba)^j (ab)^j a$ is trivial, and the result follows. (Proof of (iii.)) This follows from the fact that $(ab)$ has order $2^{n-1}$ and Lemma~\ref{l:cyclic-group-facts}.
 \end{proof}
 
+Note that the form for elements given in Lemma~\ref{l:normal-form} may not be the shortest or most intuitive form for writing the element. For instance, the generator $b \in D_4$ would be written as $(ab)^3a$ under the convention we've established. Lemma~\ref{l:normal-form} also establishes the following characterization of elements of order two in $D(2^n)$. 
+
+\begin{corollary}\label{c:elements-of-order-two}
+Let $G = D_{2^n}$. If $g \in G$, then $g$ has order two if and only if $g = (ab)^ja$ for some $0 \leq k \leq 2^n$, or $g = (ab)^{2^n}$. 
+\end{corollary} 
+
+The element $ab$ will play a crucial role in our future calculations. Geometrically, $ab$ corresponds to a rotation about $\displaystyle\frac{2 \pi}{2^n}$ radians. 
 
 \begin{lemma}\label{l:ab-order-lemma}
 Let $n \geq 2$. For the element $ab \in D(2^n)$, the following properties hold. 
@@ -287,28 +281,14 @@ The order of $ab$ follows directly from the fact that $ab$ represents a rotation
 \end{align*}
 \end{proof}
 
-\begin{lemma}\label{l:C2-C2-structure-lemma}
-If $G$ is a finite abelian group generated by two elements of order two, then $G$ is isomorphic to $C_2 \times C_2$. 
-\end{lemma}
 
-\begin{proof}
- 
-\end{proof}
-
-\begin{lemma}\label{l:dihedral-structure-lemma}
-If $G$ is a finite group generated by two elements of order two, then $G$ is isomorphic to a dihedral $2$-group. 
-\end{lemma}
-
-\begin{proof}
-todo
-\end{proof}
 
 \begin{proposition}\label{p:dihedral-maximal-subgroups}
 For any $n \geq 1$, $D(2^n)$ has three maximal subgroups. Two of these maximal subgroups are isomorphic to $D(2^{n-1})$, and one is isomorphic to $C_{2^n}$.
 \end{proposition}
 
 \begin{proof}
-The maximal subgroups of a dihedral 2-group $D(2^n)$ correspond to  the kernels of nontrivial homomorphisms from $D(2^n)$ to $C_2$. Such a homomorphism is completely determined by the images of the generators $a$ and $b$. Let $\alpha_1$ be the homomorphism for which $\alpha_1(a)$ is trivial and $\alpha_1(b)$ is not. Let $H_1 = \ker \alpha_1$. It is not hard to see that this group consists of all elements with an even number of $b$'s, and therefore is generated by $a$ and $aba$. Since $a$ and $aba$ both have order two, $H_1$ is isomorphic to a finite dihedral group by Lemma~\ref{l:dihedral-structure-lemma}. We know the order of $H_1$ is $2^n$, so $H_1$ is isomorphic to $D(2^{n-1})$. Let $\alpha_2$ be the homomorphism for which $\alpha_1(b)$ is trivial and $\alpha_1(a)$ is not. Letting $H_2 = \ker \alpha_2$, an identical argument to that of $\alpha_1$ establishes that $H_2 \cong D(2^{n-1})$. Finally, let $\alpha_3$ be the homomorphism such that neither $\alpha_3(a)$ nor $\alpha_3(b)$ is trivial. Let $H_3 = \ker \alpha_3$. It is clear that $H_3$ contains $ab$, so $H_3$ contains the cyclic subgroup $\langle ab \rangle$, which has order $2^n$ by Lemma~\ref{l:ab-order-lemma}. Since $H_3$ is maximal, it has order $2^n$, so $H_3 = \langle ab \rangle \cong C_{2^n}$. 
+We know that the index of the kernel of a homomorphism is equal to the size of its image, and that maximal subgroups in a $p$-group have index $p$. Hence the maximal subgroups of $D(2^n)$ correspond to  the kernels of nontrivial homomorphisms from $D(2^n)$ to $C_2$. Such a homomorphism is completely determined by the images of the generators $a$ and $b$. Let $\alpha_1$ be the homomorphism for which $\alpha_1(a) = e$ and $\alpha_1(b) = \tau$ is not. Let $H_1 = \ker \alpha_1$. It is not hard to see that this group consists of all elements with an even number of $b$'s, and therefore is generated by $a$ and $aba$. Since $a$ and $aba$ both have order two, $H_1$ is isomorphic to a finite dihedral group by Lemma~\ref{l:dihedral-structure-lemma}. We know the order of $H_1$ is $2^n$, so $H_1$ is isomorphic to $D(2^{n-1})$. Let $\alpha_2$ be the homomorphism for which $\alpha_1(b) = e$ and $\alpha_1(a) = \tau$. Letting $H_2 = \ker \alpha_2$, an identical argument to that of $\alpha_1$ establishes that $H_2 \cong D(2^{n-1})$. Finally, let $\alpha_3$ be the homomorphism such that neither $\alpha_3(a) = \alpha_3(b) = \tau$ Let $H_3 = \ker \alpha_3$. It is clear that $H_3$ contains $ab$, so $H_3$ contains the cyclic subgroup $\langle ab \rangle$, which has order $2^n$ by Lemma~\ref{l:ab-order-lemma}. Since $H_3$ is maximal in $D(2^n)$, we know that $H_3$ has order $2^n$, so $H_3 = \langle ab \rangle \cong C_{2^n}$. 
 \end{proof}
 
 
@@ -329,11 +309,6 @@ If a subgroup $H$ of $D(2^n)$ is powerful, then either $H\cong C_2\times C_2$ or
 The first statement follows from Proposition~\ref{p:dihedral-or-cyclic}. The second statement follows from Lemma~\ref{l:normal-form}. 
 \end{proof} 
 
-Note that the form for elements given in Lemma~\ref{l:normal-form} may not be the shortest or most intuitive form for writing the element. For instance, the generator $b \in D_4$ would be written as $(ab)^3a$ under the convention we've established. Lemma~\ref{l:normal-form} also establishes the following characterization of elements of order two in $D(2^n)$. 
-
-\begin{corollary}\label{c:elements-of-order-two}
-Let $G = D_{2^n}$. If $g \in G$, then $g$ has order two if and only if $g = (ab)^ja$ for some $0 \leq k \leq 2^n$, or $g = (ab)^{2^n}$. 
-\end{corollary} 
 
 \begin{proposition}\label{p:subgroup-cover-must-contain-maximal-cyclic}
 Let $\mathcal{C} = \{H_1, \ldots, H_q \}$ be any subgroup cover of $D(2^n)$. Then there is some $i$ with $1 \leq i \leq q$ such that $H_i = \langle ab \rangle$.
@@ -383,7 +358,7 @@ For the other direction, we suppose that $H$ is a subgroup of $D(2^n)$ such that
 \end{align*}
 Letting $t = 2^{n-1} - s$, we have shown that in this case, $H = \langle (ab)^s a, (ab)^t a \rangle$, where $s \neq t$ and $s + t = 2^{n-1}$.
 
-\textbf{Case 2:} $g = (ab)^r a $ for some $r$. Without loss of generality, assume $s > r$. Then $H$ also contains $(ab)^s a g$, which is equal to $(ab)^s a (ab)^r a$, which simplifies to $(ab)^{s-r}$ using the fact that $(ab)^m = (ba)^{2^n - m}$. By Lemma~\ref{l:normal-form}, if $s-r \neq 2^n$, then $(ab)^{s-r}$ generates a cyclic subgroup of order larger than two, contradicting our assumption that $H \cong C_2 \times C_2$. Thus it must be the case that $s-r = 2^n$, and the result follows. 
+\textbf{Case 2:} $g = (ab)^r a $ for some $r$. Without loss of generality, assume $s > r$. Then $H$ also contains $(ab)^s a g$, which is equal to $(ab)^s a (ab)^r a$, which simplifies to $(ab)^{s-r}$. By Lemma~\ref{l:normal-form}, if $s-r \neq 2^{n-1}$, then $(ab)^{s-r}$ generates a cyclic subgroup of order larger than two, contradicting our assumption that $H \cong C_2 \times C_2$. Thus it must be the case that $s-r = 2^{n-1}$, and the result follows. 
 \end{proof}
 
 \begin{corollary}
@@ -391,10 +366,10 @@ Let $g \in D(2^n)$ such that $g = (ab)^ja$ for some $0 \leq j \leq 2^{n-1}$. If 
 \end{corollary}
 
 \begin{remark}\label{r:count-and-intersection-C2}
-From Lemma~\ref{l:copies-of-C2-times-C2}, it follows that there are exactly $2^{n-1}$ subgroups of $D(2^n)$ that are isomorphic to $C_2 \times C_2$ -- one for each pair of numbers $s,t$ with $0 \leq s, t \leq 2^{n-1}$ with $s \neq t$ such that $s+t = 2^n$. It also follows from this Lemma that if $H_i$ and $H_j$ are distinct subgroups isomorphic to $C_2 \times C_2$, then $H_i \cap H_jk = \langle (ab)^{2^{n-1}} \rangle $, which is the center of $D(2^n)$. 
+From Lemma~\ref{l:copies-of-C2-times-C2}, it follows that there are exactly $2^{n-1}$ subgroups of $D(2^n)$ that are isomorphic to $C_2 \times C_2$ -- one for each pair of numbers $s,t$ with $0 \leq s, t \leq 2^{n-1}$ and $s \neq t$ such that $s+t = 2^n$. It also follows from this Lemma that if $H_i$ and $H_j$ are distinct subgroups isomorphic to $C_2 \times C_2$, then $H_i \cap H_jk = \langle (ab)^{2^{n-1}} \rangle $. 
 \end{remark}
 
-\section{Main Results}
+\section{The Powerful Covering Number of Dihedral $2$-Groups}
 
 \begin{proposition}\label{p:upper-bound-covering-number} 
 There exists a powerful cover of $D(2^n)$ with $2^{n-1} + 1$ subgroups. 
@@ -409,7 +384,7 @@ The powerful subgroup covering number of $D(2^n)$ is $2^{n-1}+1$.
 \end{theorem}
 
 \begin{proof}
-By Proposition~\ref{p:upper-bound-covering-number}, we know that the powerful covering number of $D(2^n)$ is at most $2^{n-1} + 1$. Now we show that $D(2^n)$ can not be covered by fewer than $2^{n-1} + 1$ powerful subgroups. Let $\mathcal{C} = \{ H_1, \ldots, H_q \}$ be a powerful cover of $D(2^n)$. Appealing to Proposition~\ref{p:subgroup-cover-must-contain-maximal-cyclic} and re-indexing if necessary, we may assume that $H_1 = \langle ab \rangle$, so $|H_1| = 2^n$. Now we claim that for each $i$ with $2 \leq i \leq 1$, the subgroup $H_i$ is isomorphic to to either $C_2$ or $C_2 \times C_2$.  This follows from Proposition~\ref{c:powerful-isomorphism-types} ,and from the fact that if $H_i \cong C_k$ for some $k > 2$, we would have $H_i \subseteq \langle ab \rangle$. This would make the covering redundant, and hence no minimal. 
+By Proposition~\ref{p:upper-bound-covering-number}, we know that the powerful covering number of $D(2^n)$ is at most $2^{n-1} + 1$. Now we show that $D(2^n)$ can not be covered by fewer than $2^{n-1} + 1$ powerful subgroups. Let $\mathcal{C} = \{ H_1, \ldots, H_q \}$ be a powerful cover of $D(2^n)$. Appealing to Proposition~\ref{p:subgroup-cover-must-contain-maximal-cyclic} and re-indexing if necessary, we may assume that $H_1 = \langle ab \rangle$, so $|H_1| = 2^n$. Now we claim that for each $i$ with $2 \leq i \leq 1$, the subgroup $H_i$ is isomorphic to to either $C_2$ or $C_2 \times C_2$.  This follows from Proposition~\ref{c:powerful-isomorphism-types} ,and from the fact that if $H_i \cong C_k$ for some $k > 2$, we would have $H_i \subseteq \langle ab \rangle$. This would make the covering redundant, and hence not minimal. 
 From Remark~\ref{r:count-and-intersection-C2} each $H_i$ that is isomorphic to $C_2 \times C_2$ contains $e$ and $(ab)^{2^{n-1}}$, which are already in $H_1$, so each $H_i$ that is isomorphic to $C_2 \times C_2$ contributes two new elements, while each $H_i$ that is isomorphic to $C_2$ contributes one new element.  This means that
 \[
 \left| \bigcup_{i=1}^q H_i \right| \leq |H_1| + 2(q -1) = 2^{n} + 2(q-1).
