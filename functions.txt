@@ -1,0 +1,86 @@
+IsGroupCover := function(G,coll)
+	return IsSubset(Union(coll),G);
+end;
+
+IsPowerfulPGroup := function(G)
+	local max, p, Gp, Gprime;
+	max := MaximalSubgroups(G);
+	p := Size(G)/Size(max[1]);
+	if p = 2 then Gp := Agemo(G,2,2);
+	else Gp := Agemo(G,p,1); fi;
+	Gprime := DerivedSubgroup(G);
+	return IsSubset(Gp,Gprime);
+end;
+
+MinCover := function(G)
+       local Sub, Max, Combs, Combsize, i, j;
+       Sub := Filtered(AllSubgroups(G), x-> Size(G)>Size(x) and Size(x)>1);
+       Max := Size(Sub);
+       for i in [3..Max] do
+       Combs := Combinations(Sub, i);
+       Combsize := Size(Combs);
+               for j in [1..Combsize] do
+               if IsGroupCover(G, Combs[j]) then return i; fi; od; od;
+end;
+MinACover := function(G)
+       local Ab, Max, Combs, Combsize, i, j;
+       Ab := Filtered(Filtered(AllSubgroups(G), x-> Size(G)>Size(x) and Size(x)>1), x -> IsAbelian(x));
+       Max := Size(Ab);
+       for i in [3..Max] do
+       Combs := Combinations(Ab, i);
+       Combsize := Size(Combs);
+               for j in [1..Combsize] do
+               if IsGroupCover(G, Combs[j]) then return i; fi; od; od;
+end;
+
+MinPCover := function(G)
+       local Pow, Max, Combs, Combsize, i, j;
+       Pow := Filtered(Filtered(AllSubgroups(G), x-> Size(G)>Size(x) and Size(x)>1), x -> IsPowerfulPGroup(x));
+       Max := Size(Pow);
+       for i in [3..Max] do
+       Combs := Combinations(Pow, i);
+       Combsize := Size(Combs);
+               for j in [1..Combsize] do
+               if IsGroupCover(G, Combs[j]) then return i; fi; od; od;
+end;
+
+IsPowerfullyEmbedded := function(G)
+	local max, p, N, Gp, i, H, K, L;
+	max := MaximalSubgroups(G);
+	p := Size(G)/Size(max[1]);
+	N := Filtered(NormalSubgroups(G), x-> Size(x) < Size(G) and Size(x) > 1);
+	if p = 2 then Gp := Agemo(G,2,2);
+	else Gp := Agemo(G,p,1); fi;
+	L := List([]);
+for i in [1..Size(N)] do
+	H := N[i];
+	K := CommutatorSubgroup(G,H);
+	if IsSubset(Gp, K) then Append(L,[H]);
+	else Print(""); fi; od;
+return L;
+end;
+
+IsPEcovered := function(G)
+local C;
+C := Union(IsPowerfullyEmbedded(G));
+return IsSubset(C,G);
+end;
+
+MinPECover := function(G)
+       local PE, Max, Combs, Combsize, i, j;
+       PE := IsPowerfullyEmbedded(G);
+       Max := Size(PE);
+       for i in [3..Max] do
+       Combs := Combinations(PE, i);
+       Combsize := Size(Combs);
+               for j in [1..Combsize] do
+               if IsGroupCover(G, Combs[j]) then return i; fi; od; od;
+end;
+
+example := function(G)
+	local PowCovNum;
+	PowCovNum := MinPCover(G);
+ 	return ForAny(Filtered(AllSubgroups(G), x-> Size(x) < Size(G) and Size(x) > 1 and IsCyclic(x) = false), x-> MinPCover(x) > PowCovNum);
+end;
+
+
