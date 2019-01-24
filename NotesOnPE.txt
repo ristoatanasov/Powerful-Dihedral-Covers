@@ -14,6 +14,7 @@ Size 64:
 - these are the only twelve nonabelian groups that can be covered by p.e. subgroups.
 - sigmaP = sigmaPE = sigmaA = 3 for MOST of these groups.
 - Example: the group C16:C4 has sigmaP = sigmaPE = 3 but sigmaA = 6.
+- Example: the group (C2x(C8:C2)):C2 has sigmaP = sigmaPE = 3 but sigmaA = 5.
 
 #####################################################################
 
