@@ -22,6 +22,7 @@ MinCover := function(G)
                for j in [1..Combsize] do
                if IsGroupCover(G, Combs[j]) then return i; fi; od; od;
 end;
+
 MinACover := function(G)
        local Ab, Max, Combs, Combsize, i, j;
        Ab := Filtered(Filtered(AllSubgroups(G), x-> Size(G)>Size(x) and Size(x)>1), x -> IsAbelian(x));
