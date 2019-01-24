@@ -1,0 +1,35 @@
+Size 16:
+- one nonabelian powerful group -- C8:C2.
+- only one group that can be covered by powerfully embedded (p.e.) subgroups -- C8:C2.
+- sigmaP = sigmaPE = sigmaA = 3 for this group.
+
+
+Size 32:
+- four nonabelian powerful groups -- C8:C4, C16:C2, C2x(C8:C2), (C8xC2):C2.
+- these four nonabelian groups are only groups that can be covered by p.e. subgroups.
+- sigmaP = sigmaPE = sigmaA = 3 for each.
+
+Size 64:
+- twelve nonabelian powerful groups
+- these are the only twelve nonabelian groups that can be covered by p.e. subgroups.
+- sigmaP = sigmaPE = sigmaA = 3 for MOST of these groups.
+- Example: the group C16:C4 has sigmaP = sigmaPE = 3 but sigmaA = 6.
+
+#####################################################################
+
+Size 27:
+- one nonabelian powerful group.
+- this is the only nonabelian group that can be covered by p.e. subgroups.
+- sigmaP = sigmaPE = 4.
+
+Size 81:
+- four nonabelian powerful groups
+- these four groups are the only nonabelian groups that can be covered by p.e. subgroups
+- sigmaP = sigmaPE = 4. 
+
+######################################################################
+
+Conjecture 1: If a finite p-group G is powerful if and only if there exists a cover of G by powerfully embedded subgroups.
+Conjecture 2: sigmaP = sigmaPE. 
+
+Question 1: When is sigmaP = sigmaPE < sigmaA?
